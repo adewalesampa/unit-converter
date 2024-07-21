@@ -65,6 +65,17 @@ div b{
     cursor: pointer;
 }
 
+
+.theme-ball{
+    width: 17px;
+    height: 17px;
+    border-radius: 50px;
+    background-color: red;
+    position: absolute;
+    left:0px;
+    transition: 0.5s;
+}
+
 .menu-btn{
     display: none;
 
@@ -135,15 +146,16 @@ form div h1{
     color: red;
     font-size: 14px;
  }
+
  form div button{
     width: 35%;
     padding: 10px 20px;
-    border: 1px solid grey;
+    border: 1px solid red;
     outline: none;
     border-radius: 5px;
     font-size: 20px;
     background-color: transparent;
-    color: black;
+    color:red;
     cursor: pointer;
     transition: 0.5s
     
@@ -155,15 +167,13 @@ form div h1{
  }
 
 
-.theme-ball{
-    width: 17px;
-    height: 17px;
-    border-radius: 50px;
-    background-color: red;
-    position: absolute;
-    left:0px;
-    transition: 0.5s;
-}
+
+  
+    /* utility */
+small.theme-slide{
+        left: 17px;
+    }
+
 
 
  .dark-theme-body{
