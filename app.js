@@ -1,67 +1,76 @@
-// date logic
-document.querySelector(".year").innerHTML = new Date().getFullYear()
-
-
-
 // target the menu btn
-const menu_btn = document.querySelector(".menu-btn")
+const menu_btn =document.querySelector(".menu-btn")
 
-//add event listener to the menu btn
-menu_btn.addEventListener("click", slideout)
+// add a click event listener to it
+menu_btn.addEventListener("click", show_nav)
 
-function slideout(){
+function show_nav(){
+    // target the nav
     document.querySelector("nav").classList.toggle("slide")
+
+
+    //change the bg of the menu button
     menu_btn.classList.toggle("change-bg")
 }
 
+// logic to slide theme ball
+document.querySelector(".theme-btn").addEventListener("click", slide_theme_ball)
 
+function slide_theme_ball(){
+    document.querySelector(".theme-ball").classList.toggle("theme-slide")
+    document.querySelector('body').classList.toggle("dark-theme-body")
+    document.querySelector('header').classList.toggle("dark-theme-header")
+    document.querySelector('form').classList.toggle("dark-theme-form")
+}
 
+// conversion logic start here
+// target the form
+const convert_form = document.querySelector("form")
 
-// logic for calculating interest
+//add submit  event listerner  to the form
+convert_form.addEventListener("submit", converter)
 
-// target the  form
-document.querySelector("form").addEventListener('submit', calculate_interest)
-
-function calculate_interest(event){
-
-     event.preventDefault() //prevent the submission of the form form refreshing the page
+function converter(event){
+    event.preventDefault()// preventing the form from  reloading the page
     
-       let borrowed_amount= document.querySelector(".borrowed-amount").value
-       let payment_duration = document.querySelector(".duration").value
-       let rate = 0.2
-
-// check if user enter valid input for borrowed amount and payment duration
- if(borrowed_amount === ""){
-      alert("borrowed amount field cannot be empty!")
- }
- else if(payment_duration === ""){
-    alert("payment duration field cannot be empty")
- }else{
-    let interest = (Number(borrowed_amount)* Number(payment_duration) * rate) / 12
-    let amount = Number(borrowed_amount) + interest
+    let from_unit = document.querySelector(".from-unit").value
+    let to_unit = document.querySelector(".to-unit").value
+    let user_input = Number(document.querySelector(".user-input").value)
+    let result_display = document.querySelector(".result")
+    let result = 0
 
 
-    //target the hi that displays instrest
-    document.querySelector(".interest").innerHTML = interest.toFixed(1)
-    // target the hi that display the amount
-    document.querySelector(".amount").innerHTML = amount
+    //alert(from_unit + " to " + to_unit)
+
+    if(from_unit === "cm" && to_unit === "cm"){
+
+        result = user_input * 1
+        result_display.value = result
+
+    }
+else if (from_unit === "cm" && to_unit === "m"){
+      result = user_input / 100
+      result_display.value = result
+}
+
+else if (from_unit === "m" && to_unit === "m"){
+    result = user_input *1
+    result_display.value = result
+}
+
+else if (from_unit === "m" && to_unit === "cm"){
+    result = user_input * 100
+    result_display.value = result
+}
 
 
-    // set the display property value for the  result
-    document.querySelector(".result").style.display = "flex"
-    document.querySelector("form"). style.display = "none"
+else(
+    result_display.value = "invalid input"
+)
 
- }
 
 }
-    //logic to close result
 
-  document.querySelector(".close-result").addEventListener("click",close_result)  
-  function close_result(){
-    // hide result
-    document.querySelector(".result").style.display ="none"
 
-    // bring out the form
-    document.querySelector("form").style.display ="flex"
 
-  }
+

@@ -1,73 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTEREST CALCULATOR</title>
-    <link rel="stylesheet" href="style.css">
+    <title>The Converter</title>
     <link rel="shortcut icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
-
-    
 </head>
 <body>
     <header>
-        <img src="logo.png" width="40" class="logo">
+        <span class="brand"><img src="logo.png" alt="" width="25">TCA</span>
         <nav>
-            <a href=""><img src="home.png" alt=""><small>Home</small></a>
-            <a href=""><img src="about.png" alt=""><small>about</small></a>
-            <a href=""><img src="settings.png" alt=""><small>settings</small></a>
-            <a href=""><img src="contact.png" alt=""><small>Contact us</small></a>
+            <a href=""><img src="home.png" alt="" width="16"> Home</a>
+            <a href=""><img src="about.png" alt="" width="16"> About App</a>
+            <a href=""><img src="card.png" alt="" width="16"> Donate</a>
+            <a href=""><img src="contact.png" alt="" width="16"> Contact</a>
         </nav>
-        <button class="menu-btn"></button>
+
+       <div>
+        <b>Switch Theme</b>
+        <span class="theme-btn"><small class="theme-ball"></small></span>
         
+       </div>
+        
+       <button class="menu-btn"></button>
+
     </header>
-    <main>
-        <form>
+    <Main>
+               <form>
+                <div class="row">
+                   <span>
+                    <label>from unit</label>
+                    <select class="from-unit">
+                        <option value="">Choose Unit</option>
+                        <option value="cm">centimeter (cm)</option>
+                        <option value="m">meter (m)</option>
 
-            <span class="rate"> rate: 20%</span>
+                    </select>
+                   </span>
 
-            <div>
-                <label>Borrowed Amount</label>
-                <input type="text" class="borrowed-amount">
+                    <h1>⇌</h1>
 
-            </div>
+                  <span>
+                    <label >to unit</label>
+                    <select class="to-unit">
+                        <option value="">Choose Unit</option>
+                        <option value="cm">centimeter (cm)</option>
+                        <option value="m">meter (m)</option>
 
-            <div>
-                 <label>Payment Duration</label>
-                 <input type="text" class="duration">
-            </div>
+                    </select>
+                  </span>
 
-            <button>Calculate</button>
+                </div>
+                <div  class="row">
+                    <span>
+                        <label>Enter Value</label>
+                        <input type="text" class="user-input">
+                    </span>
+
+                    <h1>⇌</h1>
+                    <span>
+                        <label>Result</label>
+                        <input type="text" disabled class="result">
+
+                    </span>
+
+                </div>
+                <div class="row">
+                    <button>Convert →</button>
+                    <button type="reset">Reset →</button>
+
+                </div>
                 
-        </form>
+               </form>
 
-        <section class="result">
-            <img src="closebutton.png" alt="" class="close-result">
-
-            <article>
-                  <span>Interest:</span>
-                  <h1 class="interest">₦0.0</h1>
-
-
-                  <span>Total Payment:</span>
-                  <h1 class="amount">₦0.0</h1>
-
-
-            </article>
-
-
-            
-        </section>
-
-    </main>
-
-
-    <footer>
-        <P>&copy; Copyright <span  class="year">coming soon</span> All right reserved. powered by SampaAdewale</P>
-
+    </Main>
+    <footer><p>&copy;Copyright 2024.ALL right reserved.Powered by Adewalesampa.</p>
+    
     </footer>
     
-    <script src="app.js"></script>
+
+      <script src="app.js"></script>
 </body>
 </html>
