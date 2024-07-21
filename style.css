@@ -105,7 +105,7 @@ form div  span select{
     outline: none;
     border-radius: 5px;
     font-size: 14px;
-    
+
 }
 form div h1{
     font-size: 30px;
@@ -194,4 +194,19 @@ footer{
 
 footer p{
     font-size: 10px;
+}
+
+.dark-theme-footer{
+    background-color:black !important;
+    color: rgb(255, 255, 255, 0.7)  !important; 
+}
+.dark-theme-select{
+    background-color: rgb(44,44,44)!important;
+    color: rgb(255, 255, 255, 0.7)  !important; 
+}
+
+.dark-theme-input{
+    background-color: rgb(44,44,44)!important;
+    color: rgb(255, 255, 255, 0.7)  !important; 
+    
 }
